@@ -1,8 +1,11 @@
 package com.nguessan.script;
 
-import android.Manifest;
+ import android.Manifest;
 import android.content.pm.PackageManager;
-import android.location.Location;
+ import android.graphics.Bitmap;
+ import android.graphics.drawable.BitmapDrawable;
+ import android.graphics.drawable.Drawable;
+ import android.location.Location;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -17,12 +20,15 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
+ import com.google.android.gms.maps.MapFragment;
+ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+ import static com.nguessan.script.R.id.map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -35,6 +41,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
 
+    //utd buildings --  class
+    static class UtdBuilding{
+        public LatLng mLatLng;
+        public String mId;
+        UtdBuilding(LatLng latlng, String id) {
+            mLatLng = latlng;
+            mId=id;
+        }
+    }//end UtdBuidling Class
+
+
+    //Hardcoded Buildings at UTDallas
+    private static final UtdBuilding[] UTDBUILDINGS = new UtdBuilding[] {
+            new UtdBuilding(new LatLng(32.986109,-96.747594), new String("ATEC, Arts and Technology Building")),
+            new UtdBuilding(new LatLng(32.985863,-96.748851), new String("SS, Student Services")),
+            new UtdBuilding(new LatLng(32.986783,-96.748803), new String("SU, Student Union")),
+            new UtdBuilding(new LatLng(32.986946,-96.747759), new String("MD, McDermmott Libray")),
+            new UtdBuilding(new LatLng(32.986101, -96.750479), new String("ECSS, Erik Jonsson School of Engineering and Computer Science - South")),
+            new UtdBuilding(new LatLng(32.986958, -96.750417), new String("ECSN, Erik Jonsson School of Engineering and Computer Science - South")),
+            new UtdBuilding(new LatLng(32.987186, -96.749102), new String("Pub"))
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +73,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
     }
 
 
@@ -116,13 +145,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mCurrLocationMarker.remove();
         }
 
-        //Place current location marker
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(latLng);
-        markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-        mCurrLocationMarker = mMap.addMarker(markerOptions);
+//        //Place current location marker
+       LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+//        MarkerOptions markerOptions = new MarkerOptions();
+//        markerOptions.position(latLng);
+//        markerOptions.title("Current Position");
+//        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+//        mCurrLocationMarker = mMap.addMarker(markerOptions);
+
+        //Place Marker at each building defined in UTDBUILDINGS
+        for(int i=0; i < UTDBUILDINGS.length; i++){
+            mMap.addMarker(new MarkerOptions()
+                    .position(UTDBUILDINGS[i].mLatLng)
+                    .title(UTDBUILDINGS[i].mId)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        }
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
