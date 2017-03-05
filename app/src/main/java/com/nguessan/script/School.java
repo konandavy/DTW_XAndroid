@@ -1,20 +1,16 @@
 package com.nguessan.script;
 
-import android.view.View;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.CheckBox;
 
+public class School extends Activity {
+    CheckBox checkbox1,checkBox2;
 
-/**
- * Created by kevinlallen1 on 3/4/2017.
- */
-
-
-public class School {
-
-    int check = 0;
-
-    public void onClick(View box){
-        check = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_school);
 
     }
-
 }
