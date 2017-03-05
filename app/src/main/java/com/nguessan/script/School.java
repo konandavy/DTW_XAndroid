@@ -14,7 +14,7 @@ public class School extends Activity {
 
     @Override
 
-
+//added one line of comment
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
