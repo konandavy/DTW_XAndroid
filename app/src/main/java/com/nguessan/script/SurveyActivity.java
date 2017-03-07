@@ -8,35 +8,22 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 public class SurveyActivity extends Activity {
-    CheckBox checkbox1,checkBox2;
-    Button Butt1;
-
 
     @Override
-
-//added one line of comment
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
 
+        //calls the act_survey.xml for viewing
         setContentView(R.layout.activity_survey);
 
-
-
-        Butt1 = (Button) findViewById(R.id.bt1);
-
-        Butt1.setOnClickListener(new View.OnClickListener() {
+        //findViewById(R.id.bt1) creates a new object instance .setOnClickListener wait for the input touch
+        findViewById(R.id.bt1).setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
-
-
-
-                Intent intent = new Intent(SurveyActivity.this,MapsActivity.class);
-
-                startActivity(intent);
-
+                //change activity display to the map activity
+                startActivity(new Intent(SurveyActivity.this,MapsActivity.class));
             }
 
         });
