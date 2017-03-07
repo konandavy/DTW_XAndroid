@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Add Volleyball -->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -42,48 +44,55 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:text="SPORTS:" />
 
                 <CheckBox
-                    android:id="@+id/soccer_checkBox"
+                    android:id="@+id/checkBox1"
                     android:textSize="20sp"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
-                    android:onClick="boxClick"
+                    android:onClick="onClick1"
                     android:text="Soccer" />
                 <CheckBox
                     android:id="@+id/checkBox2"
                     android:textSize="20sp"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick2"
                     android:text="Football" />
                 <CheckBox
                     android:id="@+id/checkBox3"
                     android:textSize="20sp"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick3"
                     android:text="Hockey" />
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:textSize="20sp"
-                    android:layout_width="114dp"
-                    android:layout_height="wrap_content"
-                    android:text="Baseball" />
-                <CheckBox
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:text="Baseball"
+            android:onClick="onClick4"
+            android:textSize="20sp" />
+
+        <CheckBox
                     android:id="@+id/checkBox5"
                     android:textSize="20sp"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick5"
                     android:text="Tennis" />
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:textSize="20sp"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Basketball" />
 
-                <TextView
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Basketball"
+            android:onClick="onClick6"
+            android:textSize="20sp" />
+
+        <TextView
                     android:id="@+id/music"
                     android:textSize="20sp"
                     android:textAlignment="center"
@@ -91,101 +100,122 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:text="MUSIC GENRES:" />
                 <CheckBox
                     android:id="@+id/checkBox7"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick7"
                     android:text="Rock" />
                 <CheckBox
                     android:id="@+id/checkBox8"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick8"
                     android:text="Country" />
                 <CheckBox
                     android:id="@+id/checkBox9"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick9"
                     android:text="Jazz" />
                 <CheckBox
                     android:id="@+id/checkBox10"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick10"
                     android:text="Rap" />
                 <CheckBox
                     android:id="@+id/checkBox11"
                     android:textSize="20sp"
                     android:layout_width="160dp"
+                    android:onClick="onClick11"
                     android:layout_height="wrap_content"
                     android:text="Hip-Hop" />
+                <CheckBox
+                    android:id="@+id/checkBox11_5"
+                    android:textSize="20sp"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick11_5"
+                    android:text="Indie" />
                 <CheckBox
                     android:id="@+id/checkBox12"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick12"
                     android:text="Rock" />
                 <CheckBox
                     android:id="@+id/checkBox13"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick13"
                     android:text="Electronic" />
 
-                <TextView
-                    android:id="@+id/major"
-                    android:textSize="20sp"
-                    android:textAlignment="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="SCHOOL MAJOR:" />
-                <CheckBox
+        <TextView
+            android:id="@+id/major"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="SCHOOL MAJOR:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <CheckBox
                     android:id="@+id/checkBox14"
                     android:textSize="20sp"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:onClick="onClick14"
                     android:text="Engineering" />
-                <CheckBox
+
+        <CheckBox
+            android:id="@+id/checkBox15"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClick15"
+            android:text="Computer Science"
+            android:textSize="20sp" />
+
+        <CheckBox
                     android:id="@+id/checkBox16"
                     android:textSize="20sp"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Computer Science" />
+                    android:onClick="onClick16"
+                    android:text="Business" />
                 <CheckBox
                     android:id="@+id/checkBox17"
                     android:textSize="20sp"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Business" />
+                    android:onClick="onClick17"
+                    android:text="Arts and Humanities" />
                 <CheckBox
                     android:id="@+id/checkBox18"
                     android:textSize="20sp"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Arts and Humanities" />
+                    android:onClick="onClick18"
+                    android:text="Science (Biology, Chemistry, etc.)" />
                 <CheckBox
                     android:id="@+id/checkBox19"
                     android:textSize="20sp"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Science (Biology, Chemistry, etc.)" />
-                <CheckBox
-                    android:id="@+id/checkBox20"
-                    android:textSize="20sp"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                    android:onClick="onClick19"
                     android:text="Math" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bt1"
+            android:id="@+id/submitButton"
             android:text="@string/submit"/>
 
 

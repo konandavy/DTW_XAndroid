@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SurveyActivity" />
-        <activity android:name=".HomepageActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".NewPasswordActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

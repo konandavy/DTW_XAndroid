@@ -93,7 +93,7 @@ public class LoginActivity extends Activity {
 
     public void onForgotClick (View v){
         if (v.getId() == R.id.button2){
-            Intent intent = new Intent(LoginActivity.this,HomepageActivity.class);
+            Intent intent = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
             startActivity(intent);
         }
     }

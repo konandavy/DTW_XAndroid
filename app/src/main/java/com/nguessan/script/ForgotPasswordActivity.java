@@ -14,14 +14,14 @@ import android.widget.Toast;
 //This activity (and it's associated XML) is not yet implemented
 //
 //
-public class HomepageActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_forgotpassword);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Android Insomnia Regular.ttf");
         TextView myTextView = (TextView) findViewById(R.id.textViewhomepage);
         myTextView.setTypeface(myTypeface);
@@ -38,12 +38,12 @@ public class HomepageActivity extends AppCompatActivity {
             String emai1 = helper.searchEmai(str);
 
             if (emai.equals(emai1) ) {
-                Intent i = new Intent(HomepageActivity.this,NewPasswordActivity.class);
+                Intent i = new Intent(ForgotPasswordActivity.this,NewPasswordActivity.class);
                 i.putExtra("username", str);
                 startActivity(i);
             }
             else {
-                Toast.makeText(HomepageActivity.this, "Username and Email don't match", Toast.LENGTH_LONG).show();
+                Toast.makeText(ForgotPasswordActivity.this, "Username and Email don't match", Toast.LENGTH_LONG).show();
             }
 
         }

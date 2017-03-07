@@ -41,10 +41,15 @@ public class SignupActivity extends Activity {
 
                 helper.insertContacts(c);
 
-                Toast.makeText(SignupActivity.this,"You are in FAM !!", Toast.LENGTH_SHORT).show();
+                //When Tested with user... User didn't notice majority of toasts.
+                Toast.makeText(SignupActivity.this,"Registering Input...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this,"You're in, Fam!", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignupActivity.this,"Welcome!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this,"Selling user Info to advertisers...", Toast.LENGTH_SHORT).show();
 
                 final Intent i = new Intent(SignupActivity.this, LoginActivity.class);
 
+                //What is the point of this Thread... anyone know?
                 Thread thread = new Thread(){
                     @Override
                     public void run() {
