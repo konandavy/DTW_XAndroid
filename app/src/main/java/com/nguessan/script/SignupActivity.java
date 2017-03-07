@@ -2,18 +2,12 @@ package com.nguessan.script;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-public class signup extends Activity {
+public class SignupActivity extends Activity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
@@ -37,7 +31,7 @@ public class signup extends Activity {
             String pass2str = pass2.getText().toString();
 
             if (!pass1str.equals(pass2str)){
-                Toast pass = Toast.makeText(signup.this, "Passwords don't match", Toast.LENGTH_SHORT);pass.show();
+                Toast pass = Toast.makeText(SignupActivity.this, "Passwords don't match", Toast.LENGTH_SHORT);pass.show();
             }
             else {
                 Contacts c = new Contacts();
@@ -47,9 +41,9 @@ public class signup extends Activity {
 
                 helper.insertContacts(c);
 
-                Toast.makeText(signup.this,"You are in FAM !!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this,"You are in FAM !!", Toast.LENGTH_SHORT).show();
 
-                final Intent i = new Intent(signup.this, MainActivity.class);
+                final Intent i = new Intent(SignupActivity.this, LoginActivity.class);
 
                 Thread thread = new Thread(){
                     @Override

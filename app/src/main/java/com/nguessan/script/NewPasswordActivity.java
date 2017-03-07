@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class newpassword extends AppCompatActivity {
+public class NewPasswordActivity extends AppCompatActivity {
     DatabaseHelper db;
     String username;
 
@@ -38,9 +38,9 @@ public class newpassword extends AppCompatActivity {
 
             if (pass.equals(password)) {
                 db.updatePassword(username, password);
-                Toast.makeText(newpassword.this,"Password updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewPasswordActivity.this,"Password updated", Toast.LENGTH_SHORT).show();
 
-                final Intent i = new Intent(newpassword.this, MainActivity.class);
+                final Intent i = new Intent(NewPasswordActivity.this, LoginActivity.class);
 
                 Thread thread = new Thread(){
                     @Override
@@ -57,7 +57,7 @@ public class newpassword extends AppCompatActivity {
 
             }
             else {
-                Toast.makeText(newpassword.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewPasswordActivity.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
 
             }
 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class School extends Activity {
+public class SurveyActivity extends Activity {
     CheckBox checkbox1,checkBox2;
     Button Butt1;
 
@@ -19,7 +19,7 @@ public class School extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_school);
+        setContentView(R.layout.activity_survey);
 
 
 
@@ -33,7 +33,7 @@ public class School extends Activity {
 
 
 
-                Intent intent = new Intent(School.this,MapsActivity.class);
+                Intent intent = new Intent(SurveyActivity.this,MapsActivity.class);
 
                 startActivity(intent);
 

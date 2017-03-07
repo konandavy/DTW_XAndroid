@@ -1,23 +1,14 @@
 package com.nguessan.script;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.graphics.drawable.AnimationDrawable;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
-import android.view.Window;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Button;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -25,9 +16,8 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends Activity {
+public class LoginActivity extends Activity {
     DatabaseHelper helper = new DatabaseHelper(this);
     LoginButton loginButton;
     CallbackManager callbackManager;
@@ -38,7 +28,7 @@ public class MainActivity extends Activity {
     protected void onCreate  (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Android Insomnia Regular.ttf");
         loginButton = (LoginButton) findViewById(R.id.button5);
         TextView myTextView = (TextView) findViewById(R.id.textView);
@@ -49,7 +39,7 @@ public class MainActivity extends Activity {
             public void onSuccess(LoginResult loginResult) {
                 Log.d("LOGIN_SUCCESS", "Success");
                 loginButton.setVisibility(View.INVISIBLE); //<- IMPORTANT
-                Intent intent = new Intent(MainActivity.this,School.class);
+                Intent intent = new Intent(LoginActivity.this,SurveyActivity.class);
                 startActivity(intent);
                 finish();//<- IMPORTANT
 
@@ -86,16 +76,16 @@ public class MainActivity extends Activity {
             String password = helper.searchPass(str);
 
             if (pass.equals(password)) {
-                Intent i = new Intent(MainActivity.this, School.class);
+                Intent i = new Intent(LoginActivity.this, SurveyActivity.class);
                 startActivity(i);
             } else {
-                Toast temp = Toast.makeText(MainActivity.this, "Username and Password don't match", Toast.LENGTH_SHORT);
+                Toast temp = Toast.makeText(LoginActivity.this, "Username and Password don't match", Toast.LENGTH_SHORT);
                 temp.show();
             }
 
         }
         if (view.getId() == R.id.button3) {
-            Intent i = new Intent(MainActivity.this, signup.class);
+            Intent i = new Intent(LoginActivity.this, SignupActivity.class);
             startActivity(i);
         }
 
@@ -103,7 +93,7 @@ public class MainActivity extends Activity {
 
     public void onForgotClick (View v){
         if (v.getId() == R.id.button2){
-            Intent intent = new Intent(MainActivity.this,homepage.class);
+            Intent intent = new Intent(LoginActivity.this,HomepageActivity.class);
             startActivity(intent);
         }
     }

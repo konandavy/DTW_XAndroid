@@ -28,7 +28,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".signup"
+            android:name=".SignupActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.nguessan.script.signup" />
@@ -44,9 +44,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".School" />
-        <activity android:name=".homepage" />
-        <activity android:name=".newpassword" />
+        <activity android:name=".SurveyActivity" />
+        <activity android:name=".HomepageActivity" />
+        <activity android:name=".NewPasswordActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

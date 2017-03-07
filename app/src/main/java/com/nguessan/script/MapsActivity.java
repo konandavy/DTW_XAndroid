@@ -58,8 +58,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             new UtdBuilding(new LatLng(32.985863,-96.748851), new String("SS, Student Services")),
             new UtdBuilding(new LatLng(32.986783,-96.748803), new String("SU, Student Union")),
             new UtdBuilding(new LatLng(32.986946,-96.747759), new String("MD, McDermmott Libray")),
-            new UtdBuilding(new LatLng(32.986101, -96.750479), new String("ECSS, Erik Jonsson School of Engineering and Computer Science - South")),
-            new UtdBuilding(new LatLng(32.986958, -96.750417), new String("ECSN, Erik Jonsson School of Engineering and Computer Science - South")),
+            new UtdBuilding(new LatLng(32.986101, -96.750479), new String("ECSS, Erik Jonsson SurveyActivity of Engineering and Computer Science - South")),
+            new UtdBuilding(new LatLng(32.986958, -96.750417), new String("ECSN, Erik Jonsson SurveyActivity of Engineering and Computer Science - South")),
             new UtdBuilding(new LatLng(32.987186, -96.749102), new String("Pub"))
     };
 

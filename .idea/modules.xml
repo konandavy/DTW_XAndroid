@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DOWNTOWALK.iml" filepath="$PROJECT_DIR$/DOWNTOWALK.iml" />
       <module fileurl="file://$PROJECT_DIR$/DTW_Xandroid.iml" filepath="$PROJECT_DIR$/DTW_Xandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

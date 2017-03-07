@@ -9,7 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class homepage extends AppCompatActivity {
+//
+//
+//This activity (and it's associated XML) is not yet implemented
+//
+//
+public class HomepageActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
@@ -33,12 +38,12 @@ public class homepage extends AppCompatActivity {
             String emai1 = helper.searchEmai(str);
 
             if (emai.equals(emai1) ) {
-                Intent i = new Intent(homepage.this,newpassword.class);
+                Intent i = new Intent(HomepageActivity.this,NewPasswordActivity.class);
                 i.putExtra("username", str);
                 startActivity(i);
             }
             else {
-                Toast.makeText(homepage.this, "Username and Email don't match", Toast.LENGTH_LONG).show();
+                Toast.makeText(HomepageActivity.this, "Username and Email don't match", Toast.LENGTH_LONG).show();
             }
 
         }
