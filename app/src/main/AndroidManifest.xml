@@ -36,6 +36,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MapsActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.nguessan.script.signup" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SignupActivity"
             android:label="@string/app_name">
             <intent-filter>
@@ -56,7 +65,7 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
-            android:name="com.google.android.geo.AIzaSyDcrt6RMBHRG_akAwLzIueM7HRJ1MXQOx4"
+            android:name="com.google.android.geo.AIzaSyBgCOtt04qe0IMV-NoL7A8Co3uInvuG0iU"
             android:value="@string/google_maps_key" />
 
         <!--
@@ -67,28 +76,11 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+        <!--suppress AndroidDomInspection -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!--
-                  ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.
-                  TODO: Change the host or pathPrefix as necessary.
-                -->
-                <data
-                    android:host="[ENTER-YOUR-HTTP-HOST-HERE]"
-                    android:pathPrefix="/maps"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -100,10 +92,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+            android:value="@string/facebook_app_id" />
+
     </application>
 
 </manifest>

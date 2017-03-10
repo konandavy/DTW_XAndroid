@@ -5,7 +5,7 @@ package com.nguessan.script;
  */
 public class Contacts {
 
-    String username, email, password;
+    String username, email, password,latitude,longitude;
 
 
     public void setUsername(String username){
@@ -29,5 +29,13 @@ public class Contacts {
     public String getPassword() {
         return this.password;
     }
+
+    public void setLatitude(String latitude){this.latitude = latitude;}
+
+    public String getLatitude() {return this.latitude;}
+
+    public void setLongitude(String longitude){this.longitude = longitude;}
+
+    public String getLongitude() {return this.longitude;}
 
 }
